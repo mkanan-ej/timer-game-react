@@ -16,7 +16,7 @@ export default function TimeChallenge({ title, targetTime }) {
         clearTimeout(timer.current);
     }
   return (<>
-  {timerExpired && <ResultModal ref={dialog} targetTime={targetTime} result={"lost"}/>}
+  <ResultModal ref={dialog} targetTime={targetTime} result={timerExpired ? "lost" : "won"}/>
     <section className="challenge">
       <h2>{title}</h2>
       {timerExpired && <p>You Lost</p>}
